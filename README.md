@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# User Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **React** application for managing users, built with **Material-UI** for design and **localStorage** for storing user data. The application allows you to **create**, **edit**, **delete**, and **view users** in a straightforward and user-friendly interface.
+
+## Features
+
+- **User CRUD Operations**: Create, Read, Update, Delete users.
+- **Form Validation**: Input fields are validated to ensure that the user data is accurate and complete.
+- **Local Storage Persistence**: User data is saved locally using the browser's localStorage.
+- **Snackbar Notifications**: Popup messages provide feedback to users when an action is completed successfully or when an error occurs.
+- **Modular Structure**: Well-organized components, services, and hooks for better maintainability.
+
+## Getting Started
+
+### Prerequisites
+
+To run this project, you need to have **Node.js** and **npm** installed on your machine. If you don't have them, you can download them from [nodejs.org](https://nodejs.org/).
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/user-management-app.git
+   cd user-management-app
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+To start the development server:
+
+```bash
+npm start
+```
+
+The application will be available at **`http://localhost:3000`**.
+
+### Running Tests
+
+To run the tests, use the following command:
+
+```bash
+npm test
+```
+
+This command will run all the unit tests defined for this project using **Jest** and **React Testing Library**.
+
+## Project Structure
+
+The project is organized in a modular manner to ensure scalability and maintainability:
+
+```
+├── src
+│   ├── assets
+│   ├── components
+│   │   ├── UserForm
+│   │   │   ├── UserForm.js
+│   │   │   └── UserForm.test.js
+│   │   ├── UserTable
+│   │   │   ├── UserTable.js
+│   │   │   └── UserTable.styles.js
+│   ├── services
+│   │   └── userService.js
+│   ├── hooks
+│   ├── App.js
+│   ├── index.js
+│   └── setupTests.js
+```
+
+### Key Directories
+
+- **`components/`**: Contains all the reusable UI components, such as `UserForm` and `UserTable`.
+- **`services/`**: Contains logic related to managing user data. The `userService.js` file provides functions to interact with `localStorage` for storing and retrieving user information.
+- **`hooks/`**: Contains custom hooks to handle application state and side effects.
+- **`assets/`**: Holds images, styles, and other assets.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- **`npm start`**: Runs the app in development mode.
+- **`npm test`**: Launches the test runner.
+- **`npm run build`**: Builds the app for production to the `build` folder.
 
-### `npm start`
+## Features in Detail
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. **CRUD Operations**
+- **Create**: Add a new user using the "Cadastrar Usuário" button.
+- **Edit**: Modify user details by clicking on the "Consultar" button in the UserTable.
+- **Delete**: Remove a user by clicking the "Deletar" button.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. **Snackbar Feedback**
+- **Real-time Notifications**: Added **Snackbar notifications** using Material-UI to provide feedback when an action succeeds or fails (e.g., saving, editing, or deleting a user).
 
-### `npm test`
+### 3. **Form Validation**
+- Implemented form validation for each user field, including **name, email, phone number**, and **birth date**. Users are notified when fields are missing or invalid.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **React**: Frontend library for building the user interface.
+- **Material-UI**: Used for component styling and providing a consistent design.
+- **Jest** & **React Testing Library**: Used for testing components and ensuring application stability.
+- **Day.js**: A lightweight library for date handling and formatting.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions are welcome! To get started:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Fork the repository**.
+2. **Create a new branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Commit your changes**:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. **Push to the branch**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Open a pull request**.
