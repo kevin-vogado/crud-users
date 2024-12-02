@@ -19,6 +19,7 @@ To run this project, you need to have **Node.js** and **npm** installed on your 
 ### Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/yourusername/user-management-app.git
    cd user-management-app
@@ -87,14 +88,17 @@ The project is organized in a modular manner to ensure scalability and maintaina
 ## Features in Detail
 
 ### 1. **CRUD Operations**
+
 - **Create**: Add a new user using the "Cadastrar Usuário" button.
 - **Edit**: Modify user details by clicking on the "Consultar" button in the UserTable.
 - **Delete**: Remove a user by clicking the "Deletar" button.
 
 ### 2. **Snackbar Feedback**
+
 - **Real-time Notifications**: Added **Snackbar notifications** using Material-UI to provide feedback when an action succeeds or fails (e.g., saving, editing, or deleting a user).
 
 ### 3. **Form Validation**
+
 - Implemented form validation for each user field, including **name, email, phone number**, and **birth date**. Users are notified when fields are missing or invalid.
 
 ## Technologies Used

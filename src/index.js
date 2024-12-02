@@ -7,11 +7,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import darkTheme from './theme';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <ThemeProvider theme={darkTheme}>
-            <CssBaseline />
-            <App />
-        </ThemeProvider>
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
