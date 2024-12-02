@@ -56,3 +56,17 @@ function UserTable({ users, onDelete, onEdit }) {
 }
 
 export default UserTable;
+import PropTypes from 'prop-types';
+
+UserTable.propTypes = {
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      nome: PropTypes.string.isRequired,
+      dataNasc: PropTypes.string.isRequired,
+      telefone: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+};

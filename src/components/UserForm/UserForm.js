@@ -47,7 +47,7 @@ function UserForm({ onSave, onClose, user }) {
 
   const validate = (name, value) => {
     switch (name) {
-      case 'nome':
+      case 'nome': {
         if (!value) {
           return 'O nome é obrigatório';
         } else if (value.length < 2) {
@@ -55,20 +55,23 @@ function UserForm({ onSave, onClose, user }) {
         } else {
           return '';
         }
-      case 'dataNasc':
+      }
+      case 'dataNasc': {
         if (!value) {
           return 'A data de nascimento é obrigatória';
         } else {
           return '';
         }
-      case 'telefone':
+      }
+      case 'telefone': {
         const cleanedPhoneNumber = value.replace(/[\s()-]/g, '');
         if (cleanedPhoneNumber.length < 11) {
           return 'O telefone deve conter 11 dígitos no formato correto';
         } else {
           return '';
         }
-      case 'email':
+      }
+      case 'email': {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!value) {
           return 'O e-mail é obrigatório';
@@ -77,6 +80,7 @@ function UserForm({ onSave, onClose, user }) {
         } else {
           return '';
         }
+      }
       default:
         return '';
     }
@@ -200,3 +204,15 @@ function UserForm({ onSave, onClose, user }) {
 }
 
 export default UserForm;
+import PropTypes from 'prop-types';
+
+UserForm.propTypes = {
+  onSave: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    nome: PropTypes.string,
+    dataNasc: PropTypes.string,
+    telefone: PropTypes.string,
+    email: PropTypes.string,
+  }),
+};
