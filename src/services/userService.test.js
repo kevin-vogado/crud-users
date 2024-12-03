@@ -141,4 +141,3 @@ describe('User Service', () => {
       JSON.stringify(usersToSave),
     );
   });
-});
