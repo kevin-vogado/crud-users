@@ -12,7 +12,7 @@ jest.mock('./userService', () => ({
   getUsers: jest.fn(),
 }));
 
-describe('User  Service', () => {
+describe('User Service', () => {
   let users;
 
   beforeEach(() => {
@@ -53,6 +53,9 @@ describe('User  Service', () => {
 
     addUser(newUser);
 
+    // Atualizando o mock para refletir a lista de usuários após a adição
+    getUsers.mockReturnValue([...users, newUser]);
+
     // Verificando se saveUsers foi chamado com a lista de usuários atualizada
     expect(saveUsers).toHaveBeenCalledWith([...users, newUser]);
   });
@@ -66,6 +69,17 @@ describe('User  Service', () => {
     };
 
     updateUser(1, updatedUser);
+
+    // Atualizando o mock para refletir a lista de usuários após a atualização
+    getUsers.mockReturnValue([
+      {
+        nome: 'User  1',
+        dataNasc: '1990-01-01',
+        telefone: '1234567890',
+        email: 'user1@example.com',
+      },
+      updatedUser,
+    ]);
 
     // Verificando se saveUsers foi chamado com a lista atualizada
     expect(saveUsers).toHaveBeenCalledWith([
@@ -81,6 +95,16 @@ describe('User  Service', () => {
 
   test('should delete user at specified index', () => {
     deleteUser(1); // Deletando o usuário no índice 1 (User  2)
+
+    // Atualizando o mock para refletir a lista de usuários após a exclusão
+    getUsers.mockReturnValue([
+      {
+        nome: 'User  1',
+        dataNasc: '1990-01-01',
+        telefone: '1234567890',
+        email: 'user1@example.com',
+      },
+    ]);
 
     // Verificando se saveUsers foi chamado com a lista após a exclusão
     expect(saveUsers).toHaveBeenCalledWith([
