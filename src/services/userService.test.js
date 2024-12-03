@@ -16,7 +16,6 @@ describe('User Service', () => {
   let users;
 
   beforeEach(() => {
-    // Lista de usuários inicial
     users = [
       {
         nome: 'User  1',
@@ -52,11 +51,9 @@ describe('User Service', () => {
     };
 
     addUser(newUser);
-
-    // Atualizando o mock para refletir a lista de usuários após a adição
+    
     getUsers.mockReturnValue([...users, newUser]);
-
-    // Verificando se saveUsers foi chamado com a lista de usuários atualizada
+    
     expect(saveUsers).toHaveBeenCalledWith([...users, newUser]);
   });
 
@@ -70,7 +67,6 @@ describe('User Service', () => {
 
     updateUser(1, updatedUser);
 
-    // Atualizando o mock para refletir a lista de usuários após a atualização
     getUsers.mockReturnValue([
       {
         nome: 'User  1',
@@ -96,7 +92,6 @@ describe('User Service', () => {
   test('should delete user at specified index', () => {
     deleteUser(1); // Deletando o usuário no índice 1 (User  2)
 
-    // Atualizando o mock para refletir a lista de usuários após a exclusão
     getUsers.mockReturnValue([
       {
         nome: 'User  1',
@@ -106,7 +101,6 @@ describe('User Service', () => {
       },
     ]);
 
-    // Verificando se saveUsers foi chamado com a lista após a exclusão
     expect(saveUsers).toHaveBeenCalledWith([
       {
         nome: 'User  1',
@@ -134,8 +128,7 @@ describe('User Service', () => {
     ];
 
     saveUsers(usersToSave);
-
-    // Verificando se localStorage.setItem foi chamado corretamente
+    
     expect(localStorage.setItem).toHaveBeenCalledWith(
       'db_usur',
       JSON.stringify(usersToSave),
